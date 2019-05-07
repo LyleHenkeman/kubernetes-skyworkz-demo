@@ -1,4 +1,4 @@
-# Kubernetes Setup for Prometheus and Grafana
+# Kubernetes Setup for Prometheus and Grafana (Skyworkz Demo)
 
 ## Quick start
 
