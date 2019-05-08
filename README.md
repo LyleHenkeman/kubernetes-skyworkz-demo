@@ -58,3 +58,19 @@ See grafana.net for some example [dashboards](https://grafana.net/dashboards) an
   - `Load`
   - `Prometheus`: `prometheus`
   - `Save & Open`
+
+## DaemonSet Commands
+Make sure it is running:
+```bash
+kubectl get daemonset
+```
+
+Find the DaemonSet revision you want to roll back to:
+```bash
+kubectl rollout history daemonset <daemonset-name>
+```
+
+Replace label selector to pickup Daemonset:
+```bash
+kubectl label node minikube app=daemonset-logging --overwrite
+```

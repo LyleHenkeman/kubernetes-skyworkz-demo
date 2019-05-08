@@ -1,15 +1,15 @@
 apiVersion: extensions/v1beta1
 kind: DaemonSet
 metadata:
-  name: logging
+  name: daemonset-logging
 spec:
   template:
     metadata:
       labels:
-        app: logging-app
+        app: daemonset-logging
     spec:
       nodeSelector:
-        app: logging-node
+        app: daemonset-logging
       containers:
         - name: webserver
           image: nginx
