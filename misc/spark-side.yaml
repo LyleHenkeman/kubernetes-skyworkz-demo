@@ -1,0 +1,23 @@
+containers:
+      - name: spark-worker
+        image: sequenceiq/spark:1.6.0
+        imagePullPolicy: Always
+        volumeMounts:
+          - name: log-volume
+            mountPath: "/opt/spark/logs/"
+        env:
+        args: ["worker"]
+        resources:
+          requests:
+            cpu: 2
+            memory: 512Mi
+      - name: fluentd-side-car
+        image: "fluent/fluentd:v1.0"
+        imagePullPolicy: Always
+        volumeMounts:
+          - name: log-volume
+            mountPath: "/opt/spark/logs/"
+        resources:
+          requests:
+            cpu: 2
+            memory: 512Mi
