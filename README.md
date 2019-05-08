@@ -74,3 +74,16 @@ Replace label selector to pickup Daemonset:
 ```bash
 kubectl label node minikube app=daemonset-logging --overwrite
 ```
+
+## Minkube Commands
+
+Expose Ports
+```bash
+kubectl expose deployment hello-nginx --type=NodePort
+```
+
+get the url
+
+```bash
+minikube service --url=true hello-nginx
+```
